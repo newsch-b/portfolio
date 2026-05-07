@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__Claude_in_Chrome__tabs_context_mcp",
+      "Bash(curl -s \"https://news.pts.org.tw/article/758744\")",
+      "Bash(curl -s \"https://news.pts.org.tw/article/719318\")",
+      "WebFetch(domain:newsch-b.github.io)",
+      "WebFetch(domain:www.twreporter.org)"
+    ]
+  }
+}

@@ -1,0 +1,224 @@
+:root {
+  --bg: #ffffff;
+  --text: #1a1a1a;
+  --text-secondary: #666666;
+  --border: #e8e8e8;
+  --tab-active: #1a1a1a;
+  --tab-inactive: #888888;
+
+  --tag-env: #2e7d32;
+  --tag-env-bg: #e8f5e9;
+  --tag-interview: #1565c0;
+  --tag-interview-bg: #e3f2fd;
+  --tag-policy: #c62828;
+  --tag-policy-bg: #fce4ec;
+  --tag-econ: #e65100;
+  --tag-econ-bg: #fff8e1;
+  --tag-intl: #6a1b9a;
+  --tag-intl-bg: #f3e5f5;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: 'Noto Sans TC', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+/* ── Header ── */
+header {
+  padding: 56px 0 40px;
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+}
+
+header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+header p {
+  margin-top: 8px;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  letter-spacing: 0.03em;
+}
+
+/* ── Nav ── */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  gap: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.nav-inner::-webkit-scrollbar {
+  display: none;
+}
+
+.tab {
+  flex-shrink: 0;
+  padding: 16px 20px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--tab-inactive);
+  cursor: pointer;
+  border: none;
+  background: none;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+  letter-spacing: 0.02em;
+  font-family: inherit;
+}
+
+.tab:hover {
+  color: var(--tab-active);
+}
+
+.tab.active {
+  color: var(--tab-active);
+  border-bottom-color: var(--tab-active);
+}
+
+/* ── Main ── */
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 24px 80px;
+}
+
+.section-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  margin-bottom: 20px;
+}
+
+/* ── Grid ── */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 20px;
+  animation: fadeIn 0.25s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Card ── */
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 24px;
+  text-decoration: none;
+  color: inherit;
+  transition: box-shadow 0.2s, transform 0.2s;
+  background: var(--bg);
+}
+
+.card:hover {
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
+  transform: translateY(-3px);
+}
+
+.card-top {
+  flex: 1;
+}
+
+.card-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  padding: 3px 10px;
+  border-radius: 20px;
+  margin-bottom: 14px;
+}
+
+.tag-env       { color: var(--tag-env);      background: var(--tag-env-bg); }
+.tag-interview { color: var(--tag-interview); background: var(--tag-interview-bg); }
+.tag-policy    { color: var(--tag-policy);   background: var(--tag-policy-bg); }
+.tag-econ      { color: var(--tag-econ);     background: var(--tag-econ-bg); }
+.tag-intl      { color: var(--tag-intl);     background: var(--tag-intl-bg); }
+
+.card h2 {
+  font-size: 0.975rem;
+  font-weight: 600;
+  line-height: 1.6;
+  color: var(--text);
+}
+
+.card-link {
+  margin-top: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: color 0.15s;
+}
+
+.card:hover .card-link {
+  color: var(--text);
+}
+
+.card-link svg {
+  width: 13px;
+  height: 13px;
+}
+
+/* ── Count badge ── */
+.count {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  margin-left: 4px;
+}
+
+/* ── Footer ── */
+footer {
+  text-align: center;
+  padding: 24px;
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  border-top: 1px solid var(--border);
+}
+
+/* ── RWD ── */
+@media (max-width: 768px) {
+  header { padding: 36px 0 28px; }
+  header h1 { font-size: 1.5rem; }
+  .grid { grid-template-columns: 1fr; }
+  .tab { padding: 14px 14px; font-size: 0.82rem; }
+  main { padding: 28px 16px 60px; }
+}

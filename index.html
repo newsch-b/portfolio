@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>新聞專題作品集</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <header>
+    <h1>新聞專題作品集</h1>
+    <p>Journalism Portfolio</p>
+  </header>
+
+  <nav aria-label="主題分類">
+    <div class="nav-inner">
+      <button class="tab active" data-category="全部">全部</button>
+      <button class="tab" data-category="環境永續">環境永續</button>
+      <button class="tab" data-category="人物專訪">人物專訪</button>
+      <button class="tab" data-category="永續政策解析">永續政策解析</button>
+      <button class="tab" data-category="產經">產經</button>
+      <button class="tab" data-category="國際">國際</button>
+    </div>
+  </nav>
+
+  <main>
+    <p class="section-label"><span id="count"></span></p>
+    <div id="grid" class="grid"></div>
+  </main>
+
+  <footer>
+    <p>© 2024 新聞專題作品集</p>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
