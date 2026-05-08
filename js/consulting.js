@@ -1,16 +1,17 @@
 const articles = [
   // ── 氣候風險 × 產業衝擊 ──
   {
-    keyword: '農業',
-    title: '從庶民水果變奢侈品──台灣荔枝為何連年減產、售價翻倍？【圖解】',
-    desc: '量化分析荔枝關鍵生長期的氣溫異常，追蹤極端氣候如何導致農業產量崩跌，進而引發市場價格劇變的連鎖效應。',
+    keyword: '循環經濟',
+    title: '全台手機回收率僅12％ 為何民眾寧可將舊機放在家？',
+    desc: '逾半消費者選擇將舊機閒置，稀土金屬大量流失；解析消費者行為、回收通路設計與政策誘因的結構性缺口，以及政府衝刺2026年循環率目標的挑戰。',
     category: 'climate',
     tagClass: 'tag-env',
     tagLabel: '氣候 × 產業',
-    source: '公視新聞',
-    skills: ['氣候數據分析', '農業產業', '數據視覺化'],
-    image: 'https://news-data.pts.org.tw/media/239332/ogimage.jpg',
-    url: 'https://news.pts.org.tw/article/758744'
+    source: '數據報導',
+    skills: ['消費者行為研究', '環境政策分析', '數據視覺化'],
+    image: 'images/手機.png',
+    imagePos: 'top',
+    url: 'https://newsch-b.github.io/phone-recycling/'
   },
   {
     keyword: '零售業',
@@ -52,41 +53,40 @@ const articles = [
     url: 'https://www.twreporter.org/a/taiwan-agricultural-insurance-decade-of-struggles'
   },
   {
-    keyword: '循環經濟',
-    title: '全台手機回收率僅12％ 為何民眾寧可將舊機放在家？',
-    desc: '逾半消費者選擇將舊機閒置，稀土金屬大量流失；解析消費者行為、回收通路設計與政策誘因的結構性缺口，以及政府衝刺2026年循環率目標的挑戰。',
+    keyword: '農業',
+    title: '從庶民水果變奢侈品──台灣荔枝為何連年減產、售價翻倍？【圖解】',
+    desc: '量化分析荔枝關鍵生長期的氣溫異常，追蹤極端氣候如何導致農業產量崩跌，進而引發市場價格劇變的連鎖效應。',
     category: 'climate',
     tagClass: 'tag-env',
     tagLabel: '氣候 × 產業',
-    source: '數據報導',
-    skills: ['消費者行為研究', '環境政策分析', '數據視覺化'],
-    image: 'images/手機.png',
-    imagePos: 'top',
-    url: 'https://newsch-b.github.io/phone-recycling/'
+    source: '公視新聞',
+    skills: ['氣候數據分析', '農業產業', '數據視覺化'],
+    image: 'https://news-data.pts.org.tw/media/239332/ogimage.jpg',
+    url: 'https://news.pts.org.tw/article/758744'
   },
 
   // ── 能源轉型與政策 ──
   {
     keyword: '淨零盤點',
     title: '巴黎協定十週年：NDC3.0 全球盤點',
-    desc: '盤點全球 195 個締約方的第三輪國家自定貢獻，運用 LLM 處理多語言政策報告，以互動地圖比較各國減碳目標、氣候融資承諾與碳排趨勢。',
+    desc: '盤點全球 195 個締約方的第三輪國家自定貢獻，以互動地圖比較各國減碳目標、氣候融資承諾與碳排趨勢。',
     category: 'energy',
     tagClass: 'tag-interview',
     tagLabel: '能源政策',
-    source: '台大風政中心',
-    skills: ['LLM 應用', '國際政策分析', '互動視覺化'],
+    source: ['台大風險中心', '分析'],
+    skills: ['國際政策分析', '互動視覺化'],
     url: 'https://rsprc.ntu.edu.tw/web/research/research_in.jsp?lang=tw&rp_id=RP1759394940788'
   },
   {
-    keyword: '能源轉型',
-    title: '第31期：淨零台灣 何得何能？',
-    desc: '彙整八場再生能源技術與政策對話，梳理台灣邁向淨零目標的技術可行性與政策缺口，提供能源轉型路徑的全景分析。',
+    keyword: '材料技術',
+    title: '致力於研發再生能源材料，讓科技創造和平——專訪林唯芳教授',
+    desc: '訪談從國防應用轉型可再生能源材料研究的台大材料系林唯芳教授，探討高效率鈣鈦礦太陽能電池的技術突破，以及科研成果走向產業化的路徑挑戰。',
     category: 'energy',
     tagClass: 'tag-interview',
     tagLabel: '能源政策',
     source: '台大CASE',
-    skills: ['能源政策', '深度訪談', '議題整合'],
-    url: 'https://case.ntu.edu.tw/blog/?cat=7020'
+    skills: ['再生能源', '材料技術', '深度訪談'],
+    url: 'https://case.ntu.edu.tw/blog/?p=44082'
   },
   {
     keyword: '政策溝通',
@@ -124,15 +124,16 @@ const articles = [
 
   // ── 環境永續 ──
   {
-    keyword: '政策落差',
-    title: '當流浪犬貓需要有個家——民間中途如何發揮力量、「浪」愛延續？',
-    desc: '深入調查 2017 年零撲殺政策實施後的執行困境，梳理民間中途組織如何填補公立收容所量能缺口，呈現政策設計與現場執行的系統性落差。',
+    keyword: '保育',
+    title: '人熊新關係／衝突越演越烈 黑熊族群擴增衍生新保育難題【圖解】',
+    desc: '2023年人熊衝突通報驟升至27件，事發地點已擴張至中央山脈保育廊道外緣；族群擴增與棲地壓縮形成政策兩難。',
     category: 'field',
     tagClass: 'tag-policy',
     tagLabel: '環境永續',
-    source: '報導者',
-    skills: ['政策追蹤', '田野調查', '多方訪談'],
-    url: 'https://www.twreporter.org/a/foster-family-for-stray-dogs-and-cats'
+    source: '公視新聞',
+    skills: ['數據視覺化', '生態分析', '政策研究'],
+    image: 'images/黑熊首圖.webp',
+    url: 'https://news.pts.org.tw/article/752483'
   },
   {
     keyword: '保育',
@@ -148,16 +149,16 @@ const articles = [
     url: 'https://news.pts.org.tw/article/752484'
   },
   {
-    keyword: '保育',
-    title: '人熊新關係／衝突越演越烈 黑熊族群擴增衍生新保育難題【圖解】',
-    desc: '2023年人熊衝突通報驟升至27件，事發地點已擴張至中央山脈保育廊道外緣；族群擴增與棲地壓縮形成政策兩難。',
+    keyword: '政策落差',
+    title: '當流浪犬貓需要有個家——民間中途如何發揮力量、「浪」愛延續？',
+    desc: '深入調查 2017 年零撲殺政策實施後的執行困境，梳理民間中途組織如何填補公立收容所量能缺口，呈現政策設計與現場執行的系統性落差。',
     category: 'field',
     tagClass: 'tag-policy',
     tagLabel: '環境永續',
-    source: '公視新聞',
-    skills: ['數據視覺化', '生態分析', '政策研究'],
-    image: 'images/黑熊首圖.webp',
-    url: 'https://news.pts.org.tw/article/752483'
+    source: '報導者',
+    skills: ['政策追蹤', '田野調查', '多方訪談'],
+    image: 'images/流浪犬貓.jpg',
+    url: 'https://www.twreporter.org/a/foster-family-for-stray-dogs-and-cats'
   },
   {
     keyword: '生態危機',
@@ -258,17 +259,17 @@ const categories = {
   },
   energy: {
     label: '能源轉型與政策',
-    desc: '以深度專家訪談、195 個巴黎協定締約方 NDC 國際比較，以及 LLM 多語言政策報告處理為主要方法，梳理台灣再生能源技術的可行性邊界、政策工具缺口與國際淨零路徑的現實落差。',
-    methods: ['深度訪談', 'LLM 應用', '國際政策比較', '能源技術分析', '政策文件研究']
+    desc: '透過專家訪談及政策文件研究，梳理台灣再生能源技術的可行性邊界與政策工具缺口，探討能源轉型的實際路徑挑戰。',
+    methods: ['深度訪談', '能源技術分析', '政策文件研究']
   },
   field: {
     label: '環境永續',
-    desc: '結合田野調查、衛星追蹤數據判讀，以及政府機關、學術單位、民間組織的多方利害關係人訪談，深入探討物種保育、生態系統變遷與環境政策執行現況，呈現生態保護與政策設計之間的結構性落差。',
+    desc: '透過政府機關、學術單位、民間組織的多方利害關係人訪談，深入探討物種保育、生態系統變遷與環境政策執行現況，呈現生態保護與政策設計之間的結構性落差。',
     methods: ['田野調查', '衛星數據判讀', '生態數據分析', '多方訪談', '政策追蹤']
   },
   finance: {
     label: '財經與國際分析',
-    desc: '整合主計總處、財政部、ACLED 國際衝突資料庫等多元統計來源，以圖解視覺化解析財政政策結構、貿易順差風險集中度，以及國際政治格局對台灣產業的連動影響。',
+    desc: '從主計總處、財政部、ACLED 國際衝突資料庫等多元統計來源，以圖解視覺化解析財政政策結構、貿易順差風險集中度，以及國際政治格局對台灣產業的連動影響。',
     methods: ['統計數據整合', '圖解視覺化', '財政政策研究', '貿易結構分析', '國際政治研究']
   }
 };
@@ -315,10 +316,7 @@ function renderAll() {
         </div>
         <div class="card-footer">
           <div class="card-meta">
-            <span class="source-badge">${a.source}</span>
-            <div class="card-tags">
-              ${a.skills.map(s => `<span class="skill-tag">${s}</span>`).join('')}
-            </div>
+            ${(Array.isArray(a.source) ? a.source : [a.source]).map(s => `<span class="source-badge">${s}</span>`).join('')}
           </div>
           <div class="card-read">閱讀全文 ${arrowSVG}</div>
         </div>
