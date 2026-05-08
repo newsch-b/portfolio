@@ -157,7 +157,7 @@ const articles = [
     tagLabel: '環境永續',
     source: '報導者',
     skills: ['政策追蹤', '田野調查', '多方訪談'],
-    image: 'images/流浪犬貓.jpg',
+    image: '流浪動物.jpg',
     url: 'https://www.twreporter.org/a/foster-family-for-stray-dogs-and-cats'
   },
   {
@@ -280,7 +280,7 @@ function renderAll() {
   const main = document.getElementById('main-content');
   main.innerHTML = '';
 
-  ['climate', 'energy', 'field', 'finance'].forEach(cat => {
+  ['climate', 'energy', 'finance', 'field'].forEach(cat => {
     const c = categories[cat];
     const catArticles = articles.filter(a => a.category === cat);
 
