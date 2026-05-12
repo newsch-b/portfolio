@@ -9,6 +9,8 @@ const articles = [
     tagLabel: '產經',
     source: '遠見雜誌',
     skills: ['平台經濟', '社群媒體', '產業分析'],
+    image: 'images/threads.jpg',
+    imagePos: 'center',
     url: 'https://www.gvm.com.tw/article/114198'
   },
   {
@@ -20,6 +22,8 @@ const articles = [
     tagLabel: '產經',
     source: '遠見雜誌',
     skills: ['科技併購', '雲端資安', '產業分析'],
+    image: 'images/google.jpg',
+    imagePos: 'center',
     url: 'https://www.gvm.com.tw/article/114325'
   },
   {
@@ -112,19 +116,6 @@ const articles = [
     imagePos: 'top',
     url: 'https://news.pts.org.tw/article/732855'
   },
-  {
-    keyword: '鑄幣悖論',
-    title: '壹元硬幣價值不只1.5元 鑄幣「越造越虧」會停止發行嗎？【圖解】',
-    desc: '以製造成本與面額的結構性倒掛為切入點，分析台灣鑄幣政策背後的經濟邏輯，評估流通貨幣政策可能的調整方向。',
-    category: 'econ',
-    tagClass: 'tag-econ',
-    tagLabel: '產經',
-    source: '公視新聞',
-    skills: ['財經分析', '政策研究', '圖解報導'],
-    image: 'images/硬幣.png',
-    imagePos: 'top',
-    url: 'https://news.pts.org.tw/article/742474'
-  },
 
   // ── 人物專訪 ──
   {
@@ -204,6 +195,8 @@ const articles = [
     tagLabel: '環境永續',
     source: ['台大風險中心', '分析'],
     skills: ['國際政策分析', '互動視覺化'],
+    image: 'images/NDC_進展_final (1).png',
+    imagePos: 'top',
     url: 'https://rsprc.ntu.edu.tw/web/research/research_in.jsp?lang=tw&rp_id=RP1759394940788'
   },
   {
@@ -276,23 +269,23 @@ const articles = [
 const categories = {
   econ: {
     label: '科技 × 產業 × 財經',
-    desc: '從平台經濟、科技併購到農業供應鏈、財政政策，整合官方統計、產業調查與多方訪談，追蹤科技發展與氣候變遷如何重塑產業結構與市場競爭格局，量化政策決策對企業與產業的具體衝擊。',
+    desc: '報導題材涵蓋平台經濟、電子業循環經濟、零售供應鏈等議題，擅長結合永續與產業發展視角切入報導；善用ESG報告、財報、政府預算、貿易統計資料深入議題，並能以數據視覺化呈現複雜的結構性問題。',
     methods: ['產業分析', '數據視覺化', '政策研究', '供應鏈研究', '圖解報導']
   },
   interview: {
     label: '人物專訪',
-    desc: '深入採訪學術研究者、技術主管與產業專家，透過深度對話梳理前沿科技與政策議題的實務挑戰，將複雜的專業知識轉譯為讀者可理解的報導。',
-    methods: ['深度訪談', '議題研究', '科學傳播', '專家觀點整合']
+    desc: '深入採訪學術研究者、技術主管與產業專家，將複雜的專業知識轉譯為讀者可理解的報導。',
+    methods: ['深度訪談', '議題研究', '專家觀點整合']
   },
   env: {
     label: '環境永續',
     desc: '從物種保育、氣候政策到動保法規，透過田野調查與多方利害關係人訪談，呈現環境保護政策設計與現場執行之間的結構性落差。',
-    methods: ['田野調查', '生態數據分析', '政策追蹤', '多方訪談']
+    methods: ['數據分析', '政策追蹤']
   },
   intl: {
     label: '國際報導',
-    desc: '關注國際政治格局與地緣衝突，分析重大事件對台灣產業與社會的連動影響，並即時解讀選舉結果、人道危機的政策意涵。',
-    methods: ['國際政治分析', '即時報導', '人道議題', '衝突研究']
+    desc: '關注國際政治、地緣衝突，運用圖解報導深度分析重大事件脈絡。',
+    methods: ['國際政治分析', '即時報導']
   }
 };
 
@@ -302,7 +295,7 @@ function renderAll() {
   const main = document.getElementById('main-content');
   main.innerHTML = '';
 
-  ['econ', 'interview', 'env', 'intl'].forEach(cat => {
+  ['econ', 'interview', 'intl', 'env'].forEach(cat => {
     const c = categories[cat];
     const catArticles = articles.filter(a => a.category === cat);
 
