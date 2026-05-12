@@ -1,0 +1,375 @@
+const articles = [
+  // ── 產經 ──
+  {
+    keyword: '平台經濟',
+    title: 'Threads滿周歲！如何靠「串文」引台灣年輕人愛上純文字？',
+    desc: 'Meta文字平台Threads滿一週年，月活躍用戶達1.75億；台灣用戶發展出獨特「串文」互動模式，並在總統大選與公民運動中扮演關鍵資訊傳播角色。分析平台如何吸引年輕用戶、建立創作者生態，以及免廣告策略下的商業前景。',
+    category: 'econ',
+    tagClass: 'tag-econ',
+    tagLabel: '產經',
+    source: '遠見雜誌',
+    skills: ['平台經濟', '社群媒體', '產業分析'],
+    url: 'https://www.gvm.com.tw/article/114198'
+  },
+  {
+    keyword: '科技',
+    title: 'Google母公司最大併購案！Wiz為何值7500億？',
+    desc: 'Alphabet以約230億美元收購雲端資安新創Wiz，創下其史上最大併購紀錄。解析Wiz如何在四年內建立3.5億美元年度經常性收入，以及這筆交易對雲端資安市場格局、企業AI應用安全需求的深遠影響。',
+    category: 'econ',
+    tagClass: 'tag-econ',
+    tagLabel: '產經',
+    source: '遠見雜誌',
+    skills: ['科技併購', '雲端資安', '產業分析'],
+    url: 'https://www.gvm.com.tw/article/114325'
+  },
+  {
+    keyword: '循環經濟',
+    title: '全台手機回收率僅12％ 為何民眾寧可將舊機放在家？',
+    desc: '逾半消費者選擇將舊機閒置，稀土金屬大量流失；解析消費者行為、回收通路設計與政策誘因的結構性缺口，以及政府衝刺2026年循環率目標的挑戰。',
+    category: 'econ',
+    tagClass: 'tag-econ',
+    tagLabel: '產經',
+    source: '數據報導',
+    skills: ['消費者行為研究', '環境政策分析', '數據視覺化'],
+    image: 'images/手機.png',
+    imagePos: 'top',
+    url: 'https://newsch-b.github.io/phone-recycling/'
+  },
+  {
+    keyword: '零售業',
+    title: '10月還在穿短袖？秋天越來越熱、服飾業面臨什麼難題？【圖解】',
+    desc: '台北9月均溫達29.4°C，較1960年代高出逾2度；服飾商換季節奏與氣候實際脫節，庫存與銷售週期面臨結構性調整壓力。',
+    category: 'econ',
+    tagClass: 'tag-econ',
+    tagLabel: '產經',
+    source: '公視新聞',
+    skills: ['氣候數據', '產業分析', '圖解報導'],
+    image: 'images/服飾氣候.png',
+    imagePos: 'top',
+    url: 'https://news.pts.org.tw/article/719318'
+  },
+  {
+    keyword: '農業',
+    title: '從庶民水果變奢侈品──台灣荔枝為何連年減產、售價翻倍？【圖解】',
+    desc: '量化分析荔枝關鍵生長期的氣溫異常，追蹤極端氣候如何導致農業產量崩跌，進而引發市場價格劇變的連鎖效應。',
+    category: 'econ',
+    tagClass: 'tag-econ',
+    tagLabel: '產經',
+    source: '公視新聞',
+    skills: ['氣候數據分析', '農業產業', '數據視覺化'],
+    image: 'https://news-data.pts.org.tw/media/239332/ogimage.jpg',
+    url: 'https://news.pts.org.tw/article/758744'
+  },
+  {
+    keyword: '農業',
+    title: '請支援復原：極端氣候加劇災損，農業保險10年覆蓋率為何仍難提升？',
+    desc: '農業保險推行十年，覆蓋率仍僅約五成；資料不足、農民對「先繳保費再理賠」制度存疑，與氣候風險持續加劇下的保障缺口形成明顯矛盾。',
+    category: 'econ',
+    tagClass: 'tag-econ',
+    tagLabel: '產經',
+    source: '報導者',
+    skills: ['深度調查', '多方訪談', '數據分析', '政策研究'],
+    image: 'https://www.twreporter.org/images/20260323163705-1cfbd5f657f5e0ff6a4826f4f01d4a70-mobile.jpg',
+    imagePos: 'center',
+    url: 'https://www.twreporter.org/a/taiwan-agricultural-insurance-decade-of-struggles'
+  },
+  {
+    keyword: '熱不平等',
+    title: '你住在熱裡嗎？租屋族的熱弱勢',
+    desc: '以GIS空間分析呈現台灣租屋族在城市熱島效應下的居住困境，揭示氣候衝擊疊加租屋市場結構不平等的社會面向。',
+    category: 'econ',
+    tagClass: 'tag-econ',
+    tagLabel: '產經',
+    source: 'ArcGIS StoryMaps',
+    skills: ['GIS 空間分析', '視覺化敘事', '社會研究'],
+    image: 'images/粗屋熱弱勢.png',
+    imagePos: 'center',
+    url: 'https://storymaps.arcgis.com/stories/ab7da179582540289aaeee6cca636934'
+  },
+  {
+    keyword: '貿易風險',
+    title: '台對美順差649億美元 哪些優勢產業在對等關稅中受災？【圖解】',
+    desc: '自動資料處理機佔順差508億美元，五項主力商品對美出口占全球比達45–61%；風險高度集中於少數戰略產業，關稅衝擊不對稱分布。',
+    category: 'econ',
+    tagClass: 'tag-econ',
+    tagLabel: '產經',
+    source: '公視新聞',
+    skills: ['貿易分析', '產業研究', '數據視覺化'],
+    image: 'images/關稅.png',
+    imagePos: 'top',
+    url: 'https://news.pts.org.tw/article/747277'
+  },
+  {
+    keyword: '財政衝擊',
+    title: '《財劃法》修正如何衝擊中央政府總預算？一次看懂預算編列',
+    desc: '圖解財政收支劃分法修正後中央財源減少3753億，逐一拆解非法定義務支出的排擠效應與中央地方財政關係的結構性變化。',
+    category: 'econ',
+    tagClass: 'tag-econ',
+    tagLabel: '產經',
+    source: '公視新聞',
+    skills: ['財政分析', '政策解析', '圖解報導'],
+    image: 'images/財畫法.webp',
+    imagePos: 'top',
+    url: 'https://news.pts.org.tw/article/732855'
+  },
+  {
+    keyword: '鑄幣悖論',
+    title: '壹元硬幣價值不只1.5元 鑄幣「越造越虧」會停止發行嗎？【圖解】',
+    desc: '以製造成本與面額的結構性倒掛為切入點，分析台灣鑄幣政策背後的經濟邏輯，評估流通貨幣政策可能的調整方向。',
+    category: 'econ',
+    tagClass: 'tag-econ',
+    tagLabel: '產經',
+    source: '公視新聞',
+    skills: ['財經分析', '政策研究', '圖解報導'],
+    image: 'images/硬幣.png',
+    imagePos: 'top',
+    url: 'https://news.pts.org.tw/article/742474'
+  },
+
+  // ── 人物專訪 ──
+  {
+    keyword: '材料技術',
+    title: '致力於研發再生能源材料，讓科技創造和平——專訪林唯芳教授',
+    desc: '訪談從國防應用轉型可再生能源材料研究的台大材料系林唯芳教授，探討高效率鈣鈦礦太陽能電池的技術突破，以及科研成果走向產業化的路徑挑戰。',
+    category: 'interview',
+    tagClass: 'tag-interview',
+    tagLabel: '人物專訪',
+    source: '台大CASE',
+    skills: ['再生能源', '材料技術', '深度訪談'],
+    url: 'https://case.ntu.edu.tw/blog/?p=44082'
+  },
+  {
+    keyword: '能源政策',
+    title: '「台灣目前沒有真正缺電！」電機教授：再生能源靠天吃飯，供電穩定要靠能源科技化',
+    desc: '深訪電機工程教授，釐清台灣能源轉型中供電穩定性的技術核心挑戰，解構政策論述與工程現實之間的認知落差。',
+    category: 'interview',
+    tagClass: 'tag-interview',
+    tagLabel: '人物專訪',
+    source: '今周刊ESG',
+    skills: ['能源政策', '專家訪談', '議題分析'],
+    url: 'https://esg.businesstoday.com.tw/article/category/180694/post/202405160010/'
+  },
+  {
+    keyword: '海洋能源',
+    title: '乘風破浪航向永續——專訪楊舜涵教授',
+    desc: '訪談從造船設計轉型海洋再生能源研究的楊舜涵助理教授，探討台灣離岸風電與海洋能的技術發展潛力與商業化挑戰。',
+    category: 'interview',
+    tagClass: 'tag-interview',
+    tagLabel: '人物專訪',
+    source: '台大CASE',
+    skills: ['再生能源', '技術分析', '深度訪談'],
+    url: 'https://case.ntu.edu.tw/乘風破浪航向永續-專訪楊舜涵教授/'
+  },
+  {
+    keyword: '溫差發電',
+    title: '思考穩定供電下的發電方式——專訪余宗謙經理',
+    desc: '探討海洋溫差發電（OTEC）作為台灣穩定基載電力的可行性，分析技術成熟度、開發成本與政策支持之間的落差。',
+    category: 'interview',
+    tagClass: 'tag-interview',
+    tagLabel: '人物專訪',
+    source: '台大CASE',
+    skills: ['能源技術', '政策分析', '深度訪談'],
+    url: 'https://case.ntu.edu.tw/blog/?p=44255'
+  },
+  {
+    keyword: '生態危機',
+    title: '「珊瑚白化」更甚的2024年 陳昭倫潛遍全台海域找答案',
+    desc: '記錄研究者以182次潛水調查系統性監測2024年台灣史上最嚴重珊瑚白化事件，以田野數據量化氣候變遷對海洋生態系的具體衝擊。',
+    category: 'interview',
+    tagClass: 'tag-interview',
+    tagLabel: '人物專訪',
+    source: '公視新聞',
+    skills: ['田野調查', '生態監測', '氣候影響研究'],
+    url: 'https://news.pts.org.tw/article/733822'
+  },
+  {
+    keyword: '科學傳播',
+    title: '我們正在逼近地球的極限嗎？——專訪臺大地質科學系羅立副教授',
+    desc: '訪談利用深海沉積物重建數十萬年氣候演變軌跡的研究者，探討古氣候田野研究如何為當代氣候危機提供科學基準。',
+    category: 'interview',
+    tagClass: 'tag-interview',
+    tagLabel: '人物專訪',
+    source: '台大CASE',
+    skills: ['科學傳播', '深度訪談', '氣候研究'],
+    url: 'https://case.ntu.edu.tw/blog/?p=45983'
+  },
+
+  // ── 環境永續 ──
+  {
+    keyword: '淨零盤點',
+    title: '巴黎協定十週年：NDC3.0 全球盤點',
+    desc: '盤點全球195個締約方的第三輪國家自定貢獻，以互動地圖比較各國減碳目標、氣候融資承諾與碳排趨勢。',
+    category: 'env',
+    tagClass: 'tag-policy',
+    tagLabel: '環境永續',
+    source: ['台大風險中心', '分析'],
+    skills: ['國際政策分析', '互動視覺化'],
+    url: 'https://rsprc.ntu.edu.tw/web/research/research_in.jsp?lang=tw&rp_id=RP1759394940788'
+  },
+  {
+    keyword: '保育',
+    title: '人熊新關係／衝突越演越烈 黑熊族群擴增衍生新保育難題【圖解】',
+    desc: '2023年人熊衝突通報驟升至27件，事發地點已擴張至中央山脈保育廊道外緣；族群擴增與棲地壓縮形成政策兩難。',
+    category: 'env',
+    tagClass: 'tag-policy',
+    tagLabel: '環境永續',
+    source: '公視新聞',
+    skills: ['數據視覺化', '生態分析', '政策研究'],
+    image: 'images/黑熊首圖.webp',
+    url: 'https://news.pts.org.tw/article/752483'
+  },
+  {
+    keyword: '保育',
+    title: '人熊新關係／救傷、收容量能皆不足 野放黑熊是最好選項？【圖解】',
+    desc: '衛星追蹤顯示野放黑熊二度返回原現蹤衝突區；行為矯正成效有限、收容量能嚴重不足，野放政策的保育與安全邊界亟待重新界定。',
+    category: 'env',
+    tagClass: 'tag-policy',
+    tagLabel: '環境永續',
+    source: '公視新聞',
+    skills: ['數據視覺化', '政策分析', '生態研究'],
+    image: 'images/cover-webp.webp',
+    imagePos: 'center',
+    url: 'https://news.pts.org.tw/article/752484'
+  },
+  {
+    keyword: '政策落差',
+    title: '當流浪犬貓需要有個家——民間中途如何發揮力量、「浪」愛延續？',
+    desc: '深入調查2017年零撲殺政策實施後的執行困境，梳理民間中途組織如何填補公立收容所量能缺口，呈現政策設計與現場執行的系統性落差。',
+    category: 'env',
+    tagClass: 'tag-policy',
+    tagLabel: '環境永續',
+    source: '報導者',
+    skills: ['政策追蹤', '田野調查', '多方訪談'],
+    image: '流浪動物.jpg',
+    url: 'https://www.twreporter.org/a/foster-family-for-stray-dogs-and-cats'
+  },
+
+  // ── 國際 ──
+  {
+    keyword: '人道援助',
+    title: '緬甸強震／國際救援陷困境 長期內戰造成哪些阻礙？',
+    desc: '分析緬甸長期內戰如何系統性阻礙8.2級強震後的國際人道救援行動，呈現衝突地區災難應變能力的結構困境。',
+    category: 'intl',
+    tagClass: 'tag-intl',
+    tagLabel: '國際',
+    source: '公視新聞',
+    skills: ['國際分析', '人道議題', '衝突研究'],
+    image: 'images/緬甸地震.jpg',
+    imagePos: 'top',
+    url: 'https://news.pts.org.tw/article/745116'
+  },
+  {
+    keyword: '政治風險',
+    title: '川普2度當選美國總統 已拿下6個搖擺州',
+    desc: '即時分析2024年美國總統大選結果，解讀六個搖擺州翻轉的政治意涵與其對全球貿易、氣候政策走向的潛在影響。',
+    category: 'intl',
+    tagClass: 'tag-intl',
+    tagLabel: '國際',
+    source: '公視新聞',
+    skills: ['國際政治', '選舉分析', '即時報導'],
+    image: 'images/川普.webp',
+    imagePos: 'center',
+    url: 'https://news.pts.org.tw/article/723322'
+  }
+];
+
+const categories = {
+  econ: {
+    label: '科技 × 產業 × 財經',
+    desc: '從平台經濟、科技併購到農業供應鏈、財政政策，整合官方統計、產業調查與多方訪談，追蹤科技發展與氣候變遷如何重塑產業結構與市場競爭格局，量化政策決策對企業與產業的具體衝擊。',
+    methods: ['產業分析', '數據視覺化', '政策研究', '供應鏈研究', '圖解報導']
+  },
+  interview: {
+    label: '人物專訪',
+    desc: '深入採訪學術研究者、技術主管與產業專家，透過深度對話梳理前沿科技與政策議題的實務挑戰，將複雜的專業知識轉譯為讀者可理解的報導。',
+    methods: ['深度訪談', '議題研究', '科學傳播', '專家觀點整合']
+  },
+  env: {
+    label: '環境永續',
+    desc: '從物種保育、氣候政策到動保法規，透過田野調查與多方利害關係人訪談，呈現環境保護政策設計與現場執行之間的結構性落差。',
+    methods: ['田野調查', '生態數據分析', '政策追蹤', '多方訪談']
+  },
+  intl: {
+    label: '國際報導',
+    desc: '關注國際政治格局與地緣衝突，分析重大事件對台灣產業與社會的連動影響，並即時解讀選舉結果、人道危機的政策意涵。',
+    methods: ['國際政治分析', '即時報導', '人道議題', '衝突研究']
+  }
+};
+
+const arrowSVG = `<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>`;
+
+function renderAll() {
+  const main = document.getElementById('main-content');
+  main.innerHTML = '';
+
+  ['econ', 'interview', 'env', 'intl'].forEach(cat => {
+    const c = categories[cat];
+    const catArticles = articles.filter(a => a.category === cat);
+
+    const section = document.createElement('section');
+    section.id = cat;
+    section.className = 'cat-section';
+
+    const header = document.createElement('div');
+    header.className = 'cat-section-header';
+    header.innerHTML = `
+      <h2 class="cat-section-title">${c.label}</h2>
+      <p class="cat-desc-text">${c.desc}</p>
+      <div class="cat-desc-methods">
+        ${c.methods.map(m => `<span class="cat-method-tag">${m}</span>`).join('')}
+      </div>
+    `;
+    section.appendChild(header);
+
+    const grid = document.createElement('div');
+    grid.className = 'grid';
+    catArticles.forEach(a => {
+      const imageHtml = a.image
+        ? `<div class="card-img"><img src="${a.image}" alt="${a.title}" loading="lazy" style="object-position:${a.imagePos || 'center'}" /></div>`
+        : '';
+      const el = document.createElement('article');
+      el.className = 'card';
+      el.innerHTML = `
+        <div class="card-kw-band">${a.keyword}</div>
+        ${imageHtml}
+        <div class="card-body">
+          <h2>${a.title}</h2>
+          <p class="card-description">${a.desc}</p>
+        </div>
+        <div class="card-footer">
+          <div class="card-meta">
+            ${(Array.isArray(a.source) ? a.source : [a.source]).map(s => `<span class="source-badge">${s}</span>`).join('')}
+          </div>
+          <div class="card-read">閱讀全文 ${arrowSVG}</div>
+        </div>
+      `;
+      el.addEventListener('click', () => window.open(a.url, '_blank', 'noopener,noreferrer'));
+      el.style.cursor = 'pointer';
+      grid.appendChild(el);
+    });
+    section.appendChild(grid);
+    main.appendChild(section);
+  });
+}
+
+function initNavObserver() {
+  const navLinks = document.querySelectorAll('.section-nav a');
+  const observer = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          navLinks.forEach(a => a.classList.remove('active'));
+          const link = document.querySelector(`.section-nav a[href="#${entry.target.id}"]`);
+          if (link) link.classList.add('active');
+        }
+      });
+    },
+    { rootMargin: '-52px 0px -55% 0px' }
+  );
+  document.querySelectorAll('.cat-section').forEach(s => observer.observe(s));
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  renderAll();
+  initNavObserver();
+});
